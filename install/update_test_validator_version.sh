@@ -16,7 +16,7 @@ update_validator() {
   systemctl restart solana-sys-tuner  
   if [ ! -f /mnt/solana/ledger/admin.rpc ]
   then
-    sudo -i -u solana solana-validator --ledger /mnt/solana/ledger wait-for-restart-window
+    sudo -i -u solana solana-validator --ledger /home/solana/ledger wait-for-restart-window
     systemctl restart solana-validator
   else
     echo "Ledger directory not found. Restart your validator service manually."
